@@ -95,7 +95,5 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     public  void swipeUp() {
 
     }
-
-
 }
 
