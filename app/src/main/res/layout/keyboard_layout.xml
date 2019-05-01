@@ -8,8 +8,8 @@
     android:layout_alignParentBottom="true"
     android:background="@color/colorPrimaryDark"
     android:keyTextSize="25dp"
-    android:keyBackground="@color/colorAccent"
-    android:keyTextColor="@color/colorPrimary"
+    android:keyBackground="@color/colorPrimary"
+    android:keyTextColor="@color/colorAccent"
     android:shadowRadius="40.1"
     android:shadowColor="@color/colorShadow">
 

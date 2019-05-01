@@ -3,9 +3,7 @@
     android:keyWidth="9%p"
     android:horizontalGap="1%p"
     android:verticalGap="1%p"
-    android:keyHeight="6%p"
-    android:keyTextColor="@color/colorPrimaryDark"
-    android:keyBackground="@color/colorPrimary" >
+    android:keyHeight="6%p" >
 
     <Row>
         <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left"/>
