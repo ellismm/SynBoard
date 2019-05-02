@@ -11,18 +11,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.inputmethod.InputConnection;
 
 public class MyInputMethodService extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
-    private KeyboardView keyboardView;
+    private KeyboardView kv;
     private Keyboard keyboard;
 
     private boolean caps = false;
 
     @Override
     public View onCreateInputView() {
-        keyboardView = (KeyboardView) getLayoutInflater().inflate(R.layout.keyboard_layout, null);
+        kv = (KeyboardView) getLayoutInflater().inflate(R.layout.keyboard_layout, null);
         keyboard = new Keyboard(this, R.xml.keys_layout);
-        keyboardView.setKeyboard(keyboard);
-        keyboardView.setOnKeyboardActionListener(this);
-        return keyboardView;
+        kv.setKeyboard(keyboard);
+        kv.setOnKeyboardActionListener(this);
+        return kv;
     }
 
     public MyInputMethodService() {
@@ -56,7 +56,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                 case Keyboard.KEYCODE_SHIFT:
                     caps = !caps;
                     keyboard.setShifted(caps);
-                    keyboardView.invalidateAllKeys();
+                    kv.invalidateAllKeys();
                     break;
                 case Keyboard.KEYCODE_DONE:
                     inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
