@@ -3,11 +3,12 @@
     android:keyWidth="9%p"
     android:horizontalGap="1dp"
     android:verticalGap="1dp"
-    android:keyHeight="6%p" >
+    android:keyHeight="6%p"
+    android:layout_gravity="center_horizontal">
 
     <Row>
         <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left"/>
-        <Key android:codes="50" android:keyLabel="2"/>
+        <Key android:codes="50" android:keyLabel="2" />
         <Key android:codes="51" android:keyLabel="3"/>
         <Key android:codes="52" android:keyLabel="4"/>
         <Key android:codes="53" android:keyLabel="5"/>
@@ -16,11 +17,12 @@
         <Key android:codes="56" android:keyLabel="8"/>
         <Key android:codes="57" android:keyLabel="9"/>
         <Key android:codes="48" android:keyLabel="0"/>
-        <Key android:codes="-5" android:keyLabel="DEL" android:keyWidth="10%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
+        <Key android:codes="-5" android:keyLabel="DEL" android:keyWidth="10%p"
+            android:isRepeatable="true" android:keyEdgeFlags="right"/>
     </Row>
 
     <Row>
-        <Key android:codes="113" android:keyLabel="q" android:keyEdgeFlags="left"/>
+        <Key android:codes="113" android:keyLabel="q" android:horizontalGap="4%p" android:keyEdgeFlags="left"/>
         <Key android:codes="119" android:keyLabel="w"/>
         <Key android:codes="101" android:keyLabel="e"/>
         <Key android:codes="114" android:keyLabel="r"/>
@@ -32,8 +34,8 @@
         <Key android:codes="112" android:keyLabel="p" android:keyEdgeFlags="right"/>
     </Row>
 
-    <Row android:layout_gravity="center_horizontal">
-        <Key android:codes="97" android:keyLabel="a" android:horizontalGap="4%p" android:keyEdgeFlags="left"/>
+    <Row>
+        <Key android:codes="97" android:keyLabel="a" android:horizontalGap="9%p" android:keyEdgeFlags="left"/>
         <Key android:codes="115" android:keyLabel="s" />
         <Key android:codes="100" android:keyLabel="d"/>
         <Key android:codes="102" android:keyLabel="f"/>
@@ -46,7 +48,7 @@
 
     <Row>
         <Key android:codes="-1" android:keyLabel="CAPS" android:keyEdgeFlags="left"/>
-        <Key android:codes="122" android:keyLabel="z"  android:horizontalGap="4%p" />
+        <Key android:codes="122" android:keyLabel="z"  android:horizontalGap="7%p" />
         <Key android:codes="120" android:keyLabel="x"/>
         <Key android:codes="99" android:keyLabel="c"/>
         <Key android:codes="118" android:keyLabel="v"/>
