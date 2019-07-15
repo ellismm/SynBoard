@@ -8,7 +8,7 @@
     android:layout_alignParentBottom="true"
     android:background="#ff7297"
     android:keyTextSize="25dp"
-    android:keyBackground="@color/colorPrimary"
+    android:keyBackground="@drawable/round_key"
     android:keyTextColor="@color/colorAccent"
     android:shadowRadius="40.1"
     android:shadowColor="#fff">
