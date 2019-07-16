@@ -28,7 +28,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         keyboard = new Keyboard(this, R.xml.keys_layout);
         keyboard2 = new Keyboard(this, R.xml.keys_layout2);
         numbers_layout = new Keyboard(this, R.xml.keys_layout_numbers);
-        kv.setKeyboard(keyboard);
+        kv.setKeyboard(numbers_layout);
         kv.setOnKeyboardActionListener(this);
         return kv;
     }
