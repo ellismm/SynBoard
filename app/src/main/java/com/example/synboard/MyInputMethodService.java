@@ -65,14 +65,10 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                     }
 
                     if(two) {
-//                        keyboard = new Keyboard(this, R.xml.keys_layout);
-                        System.out.println("I am here: ");
                         kv.setKeyboard(numbers_layout);
                         two = false;
                     }
                     else {
-//                        keyboard = new Keyboard(this, R.xml.keys_layout2);
-                        System.out.println("I am here too: ");
                         kv.setKeyboard(keyboard2);
                         two = true;
                     }
