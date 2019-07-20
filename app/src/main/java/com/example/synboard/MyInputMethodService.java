@@ -69,7 +69,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                         two = false;
                     }
                     else {
-                        kv.setKeyboard(keyboard2);
+                        kv.setKeyboard(keyboard);
                         two = true;
                     }
 
