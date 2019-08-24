@@ -19,7 +19,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     private Keyboard keyboard, keyboard2, numbers_layout;
 
     private boolean caps = false;
-    boolean two = false;
+//    int two = 1;
 
 
     @Override
@@ -28,7 +28,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         keyboard = new Keyboard(this, R.xml.keys_layout);
         keyboard2 = new Keyboard(this, R.xml.keys_layout2);
         numbers_layout = new Keyboard(this, R.xml.keys_layout_numbers);
-        kv.setKeyboard(numbers_layout);
+        kv.setKeyboard(keyboard);
         kv.setOnKeyboardActionListener(this);
         return kv;
     }
@@ -58,35 +58,44 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                     CharSequence selectedText = inputConnection.getSelectedText(0);
 
                     if(TextUtils.isEmpty(selectedText)) {
-                        inputConnection.deleteSurroundingText(1, 0);
+                        inputConnection.deleteSurroundingText(1, 1);
                     }
                     else {
                         inputConnection.commitText("",1);
                     }
+                    break;
 
-                    if(two) {
-                        kv.setKeyboard(numbers_layout);
-                        two = false;
-                    }
-                    else {
-                        kv.setKeyboard(keyboard);
-                        two = true;
-                    }
-
+                case Keyboard.KEYCODE_MODE_CHANGE:
+                    kv.setKeyboard(keyboard);
                     kv.setOnKeyboardActionListener(this);
+                    break;
+
+                case Keyboard.KEYCODE_CANCEL:
+                    kv.setKeyboard(keyboard2);
+                    kv.setOnKeyboardActionListener(this);
+                    break;
+
+                case Keyboard.KEYCODE_ALT:
+                    kv.setKeyboard(numbers_layout);
+                    kv.setOnKeyboardActionListener(this);
+                    break;
+
                 case Keyboard.KEYCODE_SHIFT:
                     caps = !caps;
                     keyboard.setShifted(caps);
                     kv.invalidateAllKeys();
                     break;
+
                 case Keyboard.KEYCODE_DONE:
                     inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                     break;
+
                 default:
                     char code = (char) i;
                     if(Character.isLetter(code) && caps)
                         code = Character.toUpperCase(code);
                     inputConnection.commitText(String.valueOf(code), 1);
+                    break;
             }
 
         }

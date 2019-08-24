@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:keyPreviewLayout="@layout/keyboard_preview"
     android:layout_alignParentBottom="true"
-    android:background="#ff7297"
+    android:background="@color/keyboardBack"
     android:keyTextSize="25dp"
     android:keyBackground="@drawable/round_key"
-    android:keyTextColor="@color/colorAccent"
+    android:keyTextColor="@color/key"
     android:shadowRadius="40.1"
     android:shadowColor="#fff">
 

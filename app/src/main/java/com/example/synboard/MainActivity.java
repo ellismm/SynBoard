@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                score.setText("You have missed " + Integer.toString(misses) + " characters while typing with this layout");
+                score.setText(Integer.toString(misses) + " characters missed \n" +
+                        "The quick red fox jumped over the laz brown dog.\n" + usersAnswer.getText().toString());
 
             }
         });

@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#8B0000</color>
     <color name="colorShadow">#1CFF03</color>
+    <color name="keyboardBack">#4D4C4B</color>
+    <color name="keyBack">#000</color>
+    <color name="key">#fff</color>
 </resources>
