@@ -3,6 +3,7 @@
     android:background="@color/colorPrimaryDark"
     android:textColor="@color/colorAccent"
     android:textAlignment="center"
-    android:textSize="30sp">
+    android:textSize="30sp"
+    android:textStyle="bold">
 
 </TextView>

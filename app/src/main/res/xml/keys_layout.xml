@@ -65,7 +65,7 @@
     </Row>
 
     <Row android:rowEdgeFlags="bottom">
-        <Key android:codes="-3" android:keyLabel="\@" android:keyWidth="10%p"  android:keyEdgeFlags="left"/>
+        <Key android:codes="-3" android:keyLabel="Sym" android:keyWidth="10%p"  android:keyEdgeFlags="left"/>
         <Key android:codes="-6" android:keyLabel="#"/>
         <Key android:codes="47" android:keyLabel="/" android:keyWidth="10%p" />
         <Key android:codes="32" android:keyLabel="SPACE" android:keyWidth="28%p" android:isRepeatable="true"/>

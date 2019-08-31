@@ -7,4 +7,9 @@
     <color name="keyboardBack">#4D4C4B</color>
     <color name="keyBack">#000</color>
     <color name="key">#fff</color>
+    <color name="candidate_normal">#FF000000</color>
+    <color name="candidate_recommended">#000000</color>
+    <color name="candidate_other">#ff808080</color>
+    <color name="candidate_background">#bbffff</color>
+    <color name="test">#ff7aff24</color>
 </resources>

@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                 score.setText(Integer.toString(misses) + " characters missed \n" +
                         "The quick red fox jumped over the laz brown dog.\n" + usersAnswer.getText().toString());
+                usersAnswer.setText("");
 
             }
         });

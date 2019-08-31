@@ -11,7 +11,8 @@
     android:keyBackground="@drawable/round_key"
     android:keyTextColor="@color/key"
     android:shadowRadius="40.1"
-    android:shadowColor="#fff">
+    android:shadowColor="#fff"
+    android:popupLayout="@layout/suggest">
 
 </android.inputmethodservice.KeyboardView>
 

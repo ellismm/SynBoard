@@ -78,7 +78,7 @@
 
     <Row>
         <Key android:codes="-2" android:keyLabel="abc"/>
-        <Key android:codes="-3" android:keyLabel="\@"/>
+        <Key android:codes="-3" android:keyLabel="Sym"/>
         <Key android:codes="32" android:keyLabel="space" android:keyWidth="28%p"/>
         <Key android:codes="48" android:keyLabel="0" android:keyWidth="14%p"/>
         <Key android:codes="46" android:keyLabel="." />
