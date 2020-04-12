@@ -7,12 +7,12 @@
     android:keyPreviewLayout="@layout/keyboard_preview"
     android:layout_alignParentBottom="true"
     android:background="@color/keyboardBack"
-    android:keyTextSize="25dp"
+    android:keyTextSize="22dp"
     android:keyBackground="@drawable/round_key"
     android:keyTextColor="@color/key"
-    android:shadowRadius="40.1"
-    android:shadowColor="#fff"
-    android:popupLayout="@layout/suggest">
+    android:popupLayout="@layout/suggest"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
 
 </android.inputmethodservice.KeyboardView>
 

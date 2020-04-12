@@ -8,8 +8,9 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
-    Button enter;
+    Button enter, reset;
     TextView red, score, usersAnswer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         enter = findViewById(R.id.enter);
+        reset = findViewById(R.id.reset);
         red = findViewById(R.id.fox);
         score = findViewById(R.id.missed);
         usersAnswer = findViewById(R.id.usersAnswer);
@@ -40,9 +42,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 score.setText(Integer.toString(misses) + " characters missed \n" +
-                        "The quick red fox jumped over the laz brown dog.\n" + usersAnswer.getText().toString());
+                        "The quick red fox jumped over the lazy brown dog.\n" + usersAnswer.getText().toString());
                 usersAnswer.setText("");
 
+            }
+        });
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                usersAnswer.setText("");
             }
         });
     }

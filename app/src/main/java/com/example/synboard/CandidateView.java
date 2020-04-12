@@ -23,10 +23,12 @@ public class CandidateView extends View {
     private Drawable mSelectionHighlight;
     private boolean mTypedWordValid;
 
+    private int suggestionIndex;
+
     private Rect mBgPadding;
 
     private static final int MAX_SUGGESTIONS = 32;
-    private static final int SCROLL_PIXELS = 20;
+    private static final int SCROLL_PIXELS = 40;
 
     private int[] mWordWidth = new int[MAX_SUGGESTIONS];
     private int[] mWordX = new int[MAX_SUGGESTIONS];
@@ -105,6 +107,10 @@ public class CandidateView extends View {
 
     }
 
+    public int getSuggestionIndex() {
+        return this.suggestionIndex;
+    }
+
     public void setService(MyInputMethodService listener) {
         mService = listener;
     }
@@ -136,7 +142,7 @@ public class CandidateView extends View {
         }
 
         if(mBgPadding == null) {
-            mBgPadding = new Rect(0, 0, 0, 0);
+            mBgPadding = new Rect(0, 10, 0, 10);
             if(getBackground() != null) {
                 getBackground().getPadding(mBgPadding);
             }
@@ -176,6 +182,8 @@ public class CandidateView extends View {
                 if((i == 1 && !typedWordValid)|| (i == 0 && typedWordValid)) {
                     paint.setFakeBoldText(true);
                     paint.setColor(mColorRecommended);
+                    suggestionIndex = i;
+                    System.out.println("the auto correct index2 : " + i);
 
                 }
                 else if(i != 0) {
@@ -227,23 +235,22 @@ public class CandidateView extends View {
         clear();
         if(suggestions != null) {
             mSuggestions = new ArrayList<String>(suggestions);
-            mSuggestions.add("hellO");
             System.out.println(suggestions);
         }
         else{
             mSuggestions = new ArrayList<String>();
-            mSuggestions.add("\"");
-            mSuggestions.add("Hello");
-            mSuggestions.add(",");
-            mSuggestions.add("World");
-            mSuggestions.add("!");
-            mSuggestions.add("\"");
-            mSuggestions.add("this");
-            mSuggestions.add("is");
-            mSuggestions.add("supposed");
-            mSuggestions.add("to");
-            mSuggestions.add("suggest");
-            mSuggestions.add("Synonyms");
+//            mSuggestions.add("\"");
+//            mSuggestions.add("Hello");
+//            mSuggestions.add(",");
+//            mSuggestions.add("World");
+//            mSuggestions.add("!");
+//            mSuggestions.add("\"");
+//            mSuggestions.add("this");
+//            mSuggestions.add("is");
+//            mSuggestions.add("supposed");
+//            mSuggestions.add("to");
+//            mSuggestions.add("suggest");
+//            mSuggestions.add("Synonyms");
 
             System.out.println(suggestions);
         }
@@ -260,9 +267,17 @@ public class CandidateView extends View {
         mSuggestions = EMPTY_LIST;
         mTouchX =OUT_OF_BOUNDs;
         mSelectedIndex = -1;
+        suggestionIndex = -1;
         invalidate();
     }
 
+
+    /**
+     * Called when candidateview is touched.
+     * TODO: Do something different with the highlighted word
+     * @param me
+     * @return
+     */
     @Override
     public boolean onTouchEvent(MotionEvent me) {
         if(mGestureDetector.onTouchEvent(me)) {
@@ -279,13 +294,13 @@ public class CandidateView extends View {
                 mScrolled = false;
                 invalidate();
                 break;
-            case MotionEvent.ACTION_MOVE:
-                if(y <= 0) {
-                    if(mSelectedIndex >= 0) {
-                        mService.pickSuggestionManually(mSelectedIndex);
-                        mSelectedIndex = -1;
-                    }
-                }
+//            case MotionEvent.ACTION_MOVE:
+//                if(y <= 0) {
+//                    if(mSelectedIndex >= 0) {
+//                        mService.pickSuggestionManually(mSelectedIndex);
+//                        mSelectedIndex = -1;
+//                    }
+//                }
             case MotionEvent.ACTION_UP:
                 if (!mScrolled) {
                     if (mSelectedIndex >= 0) {

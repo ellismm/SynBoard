@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:keyPreviewLayout="@layout/keyboard_preview"
         android:keyTextColor="#fff"
-        android:background="@color/colorPrimary"
-        android:keyTextSize="22sp" />
+        android:background="@color/keyboardBack"
+        android:keyTextSize="30sp" />
     <ImageButton android:id="@android:id/closeButton"
         android:background="@android:color/transparent"
         android:layout_width="wrap_content"

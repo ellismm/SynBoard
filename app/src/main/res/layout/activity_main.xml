@@ -58,4 +58,15 @@
         app:layout_constraintStart_toStartOf="@+id/missed"
         app:layout_constraintTop_toBottomOf="@+id/missed" />
 
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:text="reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fox" />
+
 </android.support.constraint.ConstraintLayout>
